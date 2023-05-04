@@ -1,0 +1,8 @@
+version: "3.5"
+services:
+  config-server:
+    image: sujityadav/config-server:configserver
+    network_mode: "host"
+    restart: on-failure
+    environment:
+      - TZ=Asia/Kolkata

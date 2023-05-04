@@ -1,0 +1,22 @@
+#AUTH-SERVER CONFIGURATION
+spring:
+  application:
+    name: AUTH-SERVICE
+  datasource:
+    url: jdbc:mysql://localhost:3306/AUTHDB
+    username: root
+    password: P@ssw0rd5ujit2022
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+      ddl-auto: update
+      show-sql: true
+
+
+server:
+  servlet:
+    context-path: /auth/v1
+  port: 8090

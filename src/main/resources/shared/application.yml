@@ -1,0 +1,30 @@
+eureka:
+  instance:
+    prefer-ip-address: true #when the application registers with eureka, it uses its IP address rather than its hostname
+  #    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+#This configuration file will hold common configs to be shared among all files
+#eureka:
+#  instance:
+#    prefer-ip-address: false
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
+##    service-url:
+##      defaultZone: http://localhost:8761/eureka/
+security:
+  oauth2:
+    resource:
+      user-info-uri: http://localhost/authservice/user/current
+      token-info-uri: http://localhost/authservice/oauth/check_token
+spring:
+  main:
+    allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: 50MB
+      max-request-size: 50MB
